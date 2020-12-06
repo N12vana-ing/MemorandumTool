@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.zyk.service</groupId>
+    <groupId>cn.zyk</groupId>
     <artifactId>memorandum_service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -13,5 +13,21 @@
         <artifactId>memorandum_tool</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-version}</version>
+        </dependency>
+
+        <!-- mysql驱动包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <!--<scope>runtime</scope>-->
+            <version>${mysql.connect.version}</version>
+        </dependency>
+    </dependencies>
     
 </project>
