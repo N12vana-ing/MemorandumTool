@@ -4,9 +4,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.zyk</groupId>
+    <groupId>cn.zyk.web</groupId>
     <artifactId>memorandum_web</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>cn.zyk</groupId>
+        <artifactId>memorandum_tool</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.9.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>3.0.10</version>
+        </dependency>
+
+    </dependencies>
 
     
 </project>

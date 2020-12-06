@@ -1,0 +1,11 @@
+spring:
+ resources:
+  #告诉springboot到哪里去找页面资源
+  static-locations: classpath:/static
+
+server.port: 9090
+server:
+  tomcat:
+    accesslog:
+      directory: /Users/zhouyuankai/Desktop/GitHubRepo/MemorandumTool/log/web
+      enabled: true
