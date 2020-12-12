@@ -2,17 +2,24 @@ package com.zyk.memorandum.login;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.zyk.common.login.LoginService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+import com.zyk.dao.login.LoginUserDao;
+import com.zyk.module.LoginUserDTO;
+import lombok.extern.java.Log;
 
+import javax.annotation.Resource;
+
+@Log
 @Service(interfaceClass = LoginService.class)
-@Component
+@org.springframework.stereotype.Service
 public class LoginServiceImpl implements LoginService {
-    private static final Logger log = LoggerFactory.getLogger(LoginServiceImpl.class);
 
-    public boolean loginMethod(String userName, String passWord) {
-        log.info("service "+userName+" || "+passWord);
+    @Resource
+    LoginUserDao loginUserDao;
+
+    public boolean loginMethod(String userName) {
+        log.info("service "+userName);
+        LoginUserDTO loginUserDTO = loginUserDao.selectUserByName(userName);
+        log.info("get result is "+loginUserDTO.getUserName()+" || "+loginUserDTO.getPassWord());
         return false;
     }
 }

@@ -1,34 +1,34 @@
 package com.zyk.module;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
+
+@Getter
+@Setter
 public class LoginUserDTO extends BaseDTO {
 
+    //id
+    private long id;
+
+    //用户名
     private String userName;
 
+    //密码
     private String passWord;
 
-    private String code;
+    //手机号
+    private String telephone;
 
-    public String getUserName() {
-        return userName;
-    }
+    private String email;
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+    //标志-- 1、新建 2、更新 3、删除
+    private int code;
 
-    public String getPassWord() {
-        return passWord;
-    }
+    //创建时间
+    private Date createTime;
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
+    //最后更新时间
+    private Date updateTime;
 }

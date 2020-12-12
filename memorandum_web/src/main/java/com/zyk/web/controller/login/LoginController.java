@@ -37,7 +37,7 @@ public class LoginController extends BaseController {
     public Result queryOne(@Valid @RequestBody LoginUserDTO loginUser){
         log.info("queryOne method!");
         log.info("----"+loginUser.getUserName()+" || "+loginUser.getPassWord()+" || "+loginUser.getCode());
-        loginService.loginMethod(loginUser.getUserName(),loginUser.getPassWord());
+        loginService.loginMethod(loginUser.getUserName());
         return Results.successWithData("");
     }
 
