@@ -1,0 +1,37 @@
+spring:
+  resources:
+  #告诉springboot到哪里去找页面资源
+    static-locations: classpath:/static
+#  dubbo:
+#    server: true
+#    scan: com.zyk.memorandum.login.LoginServiceImpl
+#    application:
+#      id: dubbo-provider
+#      name: dubbo-provider
+#    registry:
+#      address: zookeeper://127.0.0.1:2181
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+
+dubbo:
+   server: true
+   scan: com.zyk.memorandum.login.LoginServiceImpl
+   application:
+     id: dubbo-provider
+     name: dubbo-provider
+   registry:
+     protocol: zookeeper
+     address: zookeeper://127.0.0.1:2181
+   protocol:
+     name: dubbo
+     port: 20880
+
+server.port: 9091
+server:
+  tomcat:
+    accesslog:
+      directory: /Users/zhouyuankai/Desktop/GitHubRepo/MemorandumTool/log/service
+      enabled: true

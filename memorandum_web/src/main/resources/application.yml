@@ -1,7 +1,21 @@
 spring:
- resources:
+  resources:
   #告诉springboot到哪里去找页面资源
-  static-locations: classpath:/static
+    static-locations: classpath:/static
+
+
+dubbo:
+  application:
+    id: dubbo-consumer
+    name: dubbo-consumer
+  registry:
+    protocol: zookeeper
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20881
+
+
 
 server.port: 9090
 server:
