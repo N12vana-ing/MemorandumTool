@@ -11,13 +11,18 @@
 
 <div id="app">
     {{message}}
+
+    <span v-bind:title="message1">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
 </div>
 
 <script type="text/javascript">
     var app = new Vue({
         el: '#app' ,
         data:{
-            message: 'Hello Vue!'
+            message: 'Hello Vue!',
+            message1: '页面加载于 ' + new Date().toLocaleString()
         }
     })
 </script>

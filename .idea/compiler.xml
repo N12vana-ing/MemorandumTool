@@ -13,10 +13,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="memorandum_common" target="1.5" />
-      <module name="memorandum_service" target="1.5" />
-      <module name="memorandum_tool" target="1.5" />
-      <module name="memorandum_web" target="1.5" />
+      <module name="memorandum_common" target="1.8" />
+      <module name="memorandum_service" target="1.8" />
+      <module name="memorandum_tool" target="1.8" />
+      <module name="memorandum_web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

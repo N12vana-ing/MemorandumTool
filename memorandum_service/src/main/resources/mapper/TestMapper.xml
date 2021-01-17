@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyk.dtomapping.TestMapper">
+
+    <resultMap id="UserResultMap" type="com.zyk.module.TestDTO">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="userName" />
+        <result column="Sex" jdbcType="VARCHAR" property="sex" />
+        <result column="degree" jdbcType="INTEGER" property="degree" />
+        <result column="class" jdbcType="VARCHAR" property="className" />
+        <result column="hom_desc" jdbcType="VARCHAR" property="homeDesc" />
+    </resultMap>
+
+    <update id="batchUpdateTest" parameterType="com.zyk.module.TestDTO">
+        update test
+        <trim prefix="set" suffixOverrides=",">
+            degree=
+            <foreach collection="list" item="item" open="case " close=" end,">
+                when username=#{item.userName} and Sex=#{item.sex} and class=#{item.className} then #{item.degree,jdbcType=INTEGER}
+            </foreach>
+            home_desc =
+            <foreach collection="list" item="item" open="case " close=" end,">
+                when username=#{item.userName} and Sex=#{item.sex} and class=#{item.className} then #{item.homeDesc,jdbcType=VARCHAR}
+            </foreach>
+        </trim>
+        WHERE
+        <foreach collection="list" item="item" open="( " separator=") or (" close=" )">
+            username=#{item.userName} and Sex=#{item.sex} and class=#{item.className}
+        </foreach>
+    </update>
+</mapper>

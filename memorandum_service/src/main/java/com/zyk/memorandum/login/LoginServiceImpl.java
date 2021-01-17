@@ -16,6 +16,7 @@ public class LoginServiceImpl implements LoginService {
     @Resource
     LoginUserDao loginUserDao;
 
+    @Override
     public boolean loginMethod(String userName) {
         log.info("service "+userName);
         LoginUserDTO loginUserDTO = loginUserDao.selectUserByName(userName);
