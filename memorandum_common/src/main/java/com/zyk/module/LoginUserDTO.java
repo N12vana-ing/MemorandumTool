@@ -33,4 +33,6 @@ public class LoginUserDTO extends BaseDTO {
     private Date updateTime;
 
     private String testmergeby2021;
+
+    private String s2020;
 }
