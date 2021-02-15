@@ -31,4 +31,6 @@ public class LoginUserDTO extends BaseDTO {
 
     //最后更新时间
     private Date updateTime;
+
+    private String testmergeby2021;
 }
