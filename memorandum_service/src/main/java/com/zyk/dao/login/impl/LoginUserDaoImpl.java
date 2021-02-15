@@ -13,6 +13,7 @@ public class LoginUserDaoImpl implements LoginUserDao {
     @Autowired
     UserMapper userMapper;
 
+    @Override
     public LoginUserDTO selectUserByName(String userName) {
         return userMapper.getUserInfoByName(userName);
     }
