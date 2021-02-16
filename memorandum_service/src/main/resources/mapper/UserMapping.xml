@@ -25,6 +25,20 @@
         from user_info u where username = #{userName}
     </select>
 
+
+    <resultMap id="mapUserNamePwd" type="java.util.Map">
+        <result property="key" column="k" javaType="string" jdbcType="VARCHAR" />
+        <result property="value" column="v" javaType="string" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="getAllUserNameAndPwd" resultMap="mapUserNamePwd">
+        select
+          u.username k, u.user_password v
+        from
+          user_info u
+        group by
+          u.id
+    </select>
+
     <!--<insert id="addOneUser" parameterType="com.zykspring.funnycore.system.dto.User" useGeneratedKeys="true" keyProperty="USER_ID">-->
         <!--insert into sys_user (USER_ID, USERNAME, PASSWORD, NICKNAME)-->
         <!--values(#{userId}, #{username}, #{password}, #{nickname})-->

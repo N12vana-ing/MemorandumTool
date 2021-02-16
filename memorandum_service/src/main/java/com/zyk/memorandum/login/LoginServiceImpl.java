@@ -7,6 +7,7 @@ import com.zyk.module.LoginUserDTO;
 import lombok.extern.java.Log;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 @Log
 @Service(interfaceClass = LoginService.class)
@@ -22,5 +23,10 @@ public class LoginServiceImpl implements LoginService {
         LoginUserDTO loginUserDTO = loginUserDao.selectUserByName(userName);
         log.info("get result is "+loginUserDTO.getUserName()+" || "+loginUserDTO.getPassWord());
         return false;
+    }
+
+    @Override
+    public Map<String, String> checkPwdByName(String userName) {
+        return null;
     }
 }
